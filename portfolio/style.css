@@ -73,11 +73,11 @@ nav a:hover {
 
 .menu-icons a:hover {
     transform: scale(1.2);
+    .menu-icons a.whatsapp:hover { color: #25D366; }
+    .menu-icons a.instagram:hover { color: #db21b3; }
+    .menu-icons a.github:hover { color: #ffffff; }
 }
 
-.menu-icons a.whatsapp:hover { color: #25D366; }
-.menu-icons a.instagram:hover { color: #e242bf; }
-.menu-icons a.github:hover { color: #ffffff; }
 
 /* ===== HERO (imagem de fundo) ===== */
 .hero {
@@ -89,7 +89,7 @@ nav a:hover {
 
 .hero img {
     width: 100%;
-    height: 100%;
+    height: 101%;
     object-fit: cover;
     filter: brightness(0.5);
 }
