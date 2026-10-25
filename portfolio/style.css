@@ -96,7 +96,19 @@ nav a:hover {
     object-fit: cover;
     filter: brightness(0.5);
 }
+.imagenprojeto {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
 
+.imagenprojeto img {
+    width: 100px;
+    height: 101px;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
 /* ===== TEXTO SOBRE A IMAGEM ===== */
 .overlay {
     position: absolute;
