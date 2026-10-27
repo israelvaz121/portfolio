@@ -4,12 +4,40 @@ body {
     padding: 0;
     min-height: 1000vh;
     color: rgb(245, 239, 239);
-    background: linear-gradient(to top , rgb(0, 0, 0), rgba(0, 0, 0, 0.911));
+    background: linear-gradient(to top , rgb(0, 0, 0), rgba(0, 0, 0, 0.925));
     font-family: Bodoni;
     scroll-behavior: smooth;
 }
 h1 {
+    font-size: 2.6em;
+}
+
+h2 {
     font-size: 2em;
+}
+
+.container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.medalhas {
+    display: table;
+    margin: 10px auto;
+    padding-left: 25px;
+    text-align: left;
+    list-style: disc;
+    font-size: 1.1em;
+    line-height: 1.3;
+}
+
+.medalhas li {
+    margin: 2px 0;
+}
+
+.projeto p {
+    font-size: 1.1em;
+    line-height: 1.6;
 }
 
 /* ===== MENU ===== */
@@ -98,9 +126,49 @@ nav a:hover {
 }
 .imagenprojeto {
     position: relative;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
+    flex: 1 1 50%;
+    width: 50%;
+    min-width: 0;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.projeto {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 50px 0;
+}
+
+.projeto:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.imagenprojeto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagenprojeto:hover {
+    transform: scale(1.06) rotate(-1deg);
+    box-shadow: 0 0 20px rgba(129, 129, 129, 0.603);
+}
+
+.projeto .texto {
+    flex: 1 1 50%;
+    min-width: 0;
+    text-align: left;
+}
+
+@media (max-width: 700px) {
+    .projeto,
+    .projeto:nth-of-type(even) {
+        flex-direction: column;
+    }
+    .imagenprojeto {
+        flex: none;
+        width: 100%;
+    }
 }
 
 .imagenprojeto img {
@@ -121,12 +189,12 @@ nav a:hover {
 }
 
 .overlay h1 {
-    font-size: 3em;
+    font-size: 3.8em;
     margin-bottom: 15px;
 }
 
 .overlay p {
-    font-size: 1.3em;
+    font-size: 1.6em;
     color: #ddd;
 }
 
@@ -140,6 +208,7 @@ nav a:hover {
 
 /* ===== HOVER NAS LETRAS ===== */
 h1 span,
+h2 span,
 p span {
     display: inline-block;
     transition: 0.3s ease;
@@ -148,16 +217,52 @@ p span {
 }
 
 h1 span:hover,
+h2 span:hover,
 p span:hover {
-    color: #f1f1f1;
-    transform: scale(1.4) rotate(10deg);
-    text-shadow: 0 0 15px #ffffff;
+    color: #ffffff;
+    transform: scale(1.8) rotate(12deg);
+    text-shadow: 0 0 10px #ffffff, 0 0 25px #ffffff, 0 0 40px #8ab4ff;
 }
 
 /* ===== SCROLL ===== */
 html {
     scroll-behavior: smooth;
 }
+#projetos {
+    max-width: 1200px;
+}
 #sobre, #projetos, #contato {
     scroll-margin-top: 120px;
+}
+.contato a {
+    color: rgb(207, 207, 207);
+    font-size: 1.5rem;
+    transition: transform 0.18s ease, color 0.18s ease;
+    text-decoration: none;
+}
+
+.contato :hover {
+    transform: scale(1.2);
+    .menu-icons a.whatsapp:hover { color: #25D366; }
+    .menu-icons a.instagram:hover { color: #db21b3; }
+    .menu-icons a.github:hover { color: #ffffff; }
+}
+/* ===== FLUTUANTE ===== */
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+.flutuante {
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.projeto.flutuante:nth-of-type(even),
+.flutuante:nth-of-type(even) {
+    animation-duration: 5s;
+    animation-delay: -1.5s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flutuante { animation: none; }
 }
