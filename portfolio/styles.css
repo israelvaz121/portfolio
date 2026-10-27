@@ -1,0 +1,337 @@
+/* ===== BASE ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: rgb(245, 239, 239);
+    background: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.925));
+    font-family: Bodoni, "Bodoni MT", Georgia, serif;
+}
+
+h1 {
+    font-size: 2.6em;
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 2.2em;
+    color: #d0d0d0;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+/* Título principal (estilo por ID) */
+#titulo-principal {
+    font-size: 3.8em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Destaque por classe nos interesses */
+.destaque {
+    color: #ffd966;
+    font-weight: bold;
+}
+
+/* ===== LAYOUT ===== */
+/* Conteúdo principal: largura máxima e centralização */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#projetos {
+    max-width: 1200px;
+}
+
+#sobre,
+#projetos,
+#contato {
+    scroll-margin-top: 120px;
+}
+
+/* ===== MENU ===== */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+nav .barra {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: rgb(207, 207, 207);
+    background: linear-gradient(to right, #070707, rgba(19, 19, 19, 0.3));
+    transition: background 0.4s ease;
+}
+
+/* Menu quando a página rola */
+nav .barra.rolado {
+    background: rgba(15, 15, 15, 0.75);
+    backdrop-filter: blur(10px);
+}
+
+nav .menu-links {
+    display: flex;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .menu-links li {
+    transition: transform 0.18s ease;
+}
+
+nav .menu-links li:hover {
+    transform: scale(1.1);
+}
+
+nav a {
+    color: rgb(207, 207, 207);
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: rgb(223, 223, 224);
+    text-shadow: 0 0 10px #fff;
+}
+
+/* Ícones do menu */
+.menu-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu-icons a {
+    font-size: 1.5rem;
+    transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.menu-icons a:hover {
+    transform: scale(1.2);
+}
+
+.menu-icons a.whatsapp:hover  { color: #25d366; }
+.menu-icons a.instagram:hover { color: #db21b3; }
+.menu-icons a.github:hover    { color: #ffffff; }
+
+/* ===== HERO ===== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+}
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    color: white;
+}
+
+.overlay h1 {
+    margin-bottom: 15px;
+}
+
+.overlay p {
+    font-size: 1.6em;
+    color: #ddd;
+}
+
+/* ===== LISTAS ===== */
+.lista {
+    display: table;
+    margin: 10px auto;
+    padding-left: 25px;
+    text-align: left;
+    font-size: 1.1em;
+    line-height: 1.3;
+}
+
+.lista li {
+    margin: 2px 0;
+}
+
+ul.lista {
+    list-style: disc;
+}
+
+ol.lista {
+    list-style: decimal;
+}
+
+/* ===== PROJETOS ===== */
+.projeto {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 50px 0;
+}
+
+/* Projetos pares: texto à esquerda, imagem à direita */
+.projeto:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.projeto-img {
+    flex: 1 1 50%;
+    width: 50%;
+    min-width: 0;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-img:hover {
+    transform: scale(1.06) rotate(-1deg);
+    box-shadow: 0 0 20px rgba(129, 129, 129, 0.6);
+}
+
+.projeto .texto {
+    flex: 1 1 50%;
+    min-width: 0;
+    text-align: left;
+}
+
+.projeto p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* ===== CONTATO ===== */
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contato a {
+    display: inline-block;
+    color: rgb(207, 207, 207);
+    font-size: 1.1rem;
+    text-decoration: underline;
+    transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.contato a:hover           { transform: scale(1.05); }
+.contato a.whatsapp:hover  { color: #25d366; }
+.contato a.instagram:hover { color: #db21b3; }
+.contato a.github:hover    { color: #ffffff; }
+
+/* ===== HOVER NAS LETRAS (spans criados pelo script.js) ===== */
+.palavra {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.letra {
+    display: inline-block;
+    transition: 0.3s ease;
+    cursor: default;
+}
+
+.letra:hover {
+    color: #ffffff;
+    transform: scale(1.8) rotate(12deg);
+    text-shadow: 0 0 10px #ffffff, 0 0 25px #ffffff, 0 0 40px #8ab4ff;
+}
+
+/* ===== FLUTUANTE ===== */
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+}
+
+.flutuante {
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.flutuante:nth-of-type(even) {
+    animation-duration: 5s;
+    animation-delay: -1.5s;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 700px) {
+    nav .barra {
+        padding: 12px 16px;
+    }
+
+    nav .menu-links {
+        gap: 16px;
+    }
+
+    .menu-icons {
+        gap: 12px;
+    }
+
+    #titulo-principal {
+        font-size: 2.6em;
+    }
+
+    .overlay p {
+        font-size: 1.2em;
+    }
+
+    .projeto,
+    .projeto:nth-of-type(even) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .projeto-img {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .flutuante { animation: none; }
+}
