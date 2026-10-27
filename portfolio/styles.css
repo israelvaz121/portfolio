@@ -2,7 +2,6 @@
 body {
     margin: 0;
     padding: 0;
-    min-height: 1000vh;
     color: rgb(245, 239, 239);
     background: linear-gradient(to top , rgb(0, 0, 0), rgba(0, 0, 0, 0.925));
     font-family: Bodoni;
@@ -10,10 +9,45 @@ body {
 }
 h1 {
     font-size: 2.6em;
+    color: #ffffff;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.2em;
+    color: #d0d0d0;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+/* Título principal (estilo por ID) */
+#titulo-principal {
+    font-size: 3.8em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Conteúdo principal: largura máxima e centralização */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Destaque por classe nos itens de interesses */
+.destaque {
+    color: #ffd966;
+    font-weight: bold;
+}
+
+.objetivos {
+    list-style: decimal;
+}
+
+footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
 }
 
 .container p {
@@ -48,7 +82,7 @@ nav {
     z-index: 1000;
 }
 
-nav ul {
+nav .barra {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -61,19 +95,22 @@ nav ul {
 }
 
 /* MENU QUANDO ROLA A PÁGINA */
-nav ul.rolado {
+nav .barra.rolado {
     background: rgba(15, 15, 15, 0.75);
     backdrop-filter: blur(10px);
     transition: 0.3s ease;
 }
 
 /* LINKS DO MENU */
-nav ul .menu-links {
+nav .menu-links {
     display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
     transition: transform 0.18s ease, color 0.18s ease;
     gap: 60px;
 }
-nav ul .menu-links :hover{
+nav .menu-links :hover{
     transform: scale(1.1);
 }
 nav a {
@@ -189,7 +226,6 @@ nav a:hover {
 }
 
 .overlay h1 {
-    font-size: 3.8em;
     margin-bottom: 15px;
 }
 
@@ -207,46 +243,24 @@ nav a:hover {
 }
 
 /* ===== HOVER NAS LETRAS ===== */
-h1 span,
-h2 span,
-p span {
+.palavra {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.letra {
     display: inline-block;
     transition: 0.3s ease;
     white-space: pre;
     cursor: default;
 }
 
-h1 span:hover,
-h2 span:hover,
-p span:hover {
+.letra:hover {
     color: #ffffff;
     transform: scale(1.8) rotate(12deg);
     text-shadow: 0 0 10px #ffffff, 0 0 25px #ffffff, 0 0 40px #8ab4ff;
 }
 
-/* ===== SCROLL ===== */
-html {
-    scroll-behavior: smooth;
-}
-#projetos {
-    max-width: 1200px;
-}
-#sobre, #projetos, #contato {
-    scroll-margin-top: 120px;
-}
-.contato a {
-    color: rgb(207, 207, 207);
-    font-size: 1.5rem;
-    transition: transform 0.18s ease, color 0.18s ease;
-    text-decoration: none;
-}
-
-.contato :hover {
-    transform: scale(1.2);
-    .menu-icons a.whatsapp:hover { color: #25D366; }
-    .menu-icons a.instagram:hover { color: #db21b3; }
-    .menu-icons a.github:hover { color: #ffffff; }
-}
 /* ===== FLUTUANTE ===== */
 @keyframes flutuar {
     0%, 100% { transform: translateY(0); }
